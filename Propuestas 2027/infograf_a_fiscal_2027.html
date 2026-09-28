@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reforma y Cambios Fiscales 2027 | Infografía Interactiva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        corporate: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            800: '#102a43',
+                            900: '#0b1d3a',
+                        },
+                        emerald: {
+                            DEFAULT: '#10b981',
+                            600: '#059669',
+                            50: '#ecfdf5',
+                        },
+                        coral: {
+                            DEFAULT: '#f43f5e',
+                            50: '#fff1f2',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(16, 42, 67, 0.08), 0 8px 10px -6px rgba(16, 42, 67, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-corporate-50 text-corporate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <header class="bg-corporate-900 text-white shadow-xl relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div>
+                    <span class="inline-block bg-emerald/20 text-emerald-300 font-semibold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-3 border border-emerald/30">
+                        Paquete Económico 2027 • Irazaba y Asociados
+                    </span>
+                    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+                        Reforma y Cambios Fiscales 2027
+                    </h1>
+                    <p class="mt-2 text-base sm:text-lg text-corporate-100 max-w-2xl">
+                        Perspectivas estratégicas, riesgos de alto impacto y oportunidades clave para la planeación fiscal corporativa y PyME.
+                    </p>
+                </div>
+                <!-- Revenue Target Card -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 p-5 rounded-2xl w-full md:w-auto shadow-lg">
+                    <p class="text-xs uppercase tracking-wider text-emerald-400 font-semibold">Objetivo Recaudatorio</p>
+                    <div class="flex items-baseline gap-2 mt-1">
+                        <span class="text-3xl font-bold text-white">$6.264 billones</span>
+                        <span class="text-xs text-corporate-100">(15.9% del PIB)</span>
+                    </div>
+                    <p class="text-xs text-emerald-300 mt-1 font-medium">▲ Incremento real del 5.9% vs 2026</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-corporate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex overflow-x-auto space-x-2 sm:space-x-4 py-3 no-scrollbar">
+            <button onclick="switchTab('todos')" id="btn-todos" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-corporate-900 text-white whitespace-nowrap shadow-sm">
+                Vista General
+            </button>
+            <button onclick="switchTab('riesgos')" id="btn-riesgos" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-corporate-100 text-corporate-800 hover:bg-coral-50 hover:text-coral whitespace-nowrap">
+                Riesgos de Alto Impacto
+            </button>
+            <button onclick="switchTab('oportunidades')" id="btn-oportunidades" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-corporate-100 text-corporate-800 hover:bg-emerald-50 hover:text-emerald whitespace-nowrap">
+                Oportunidades Pura (PyME)
+            </button>
+            <button onclick="switchTab('otros')" id="btn-otros" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-corporate-100 text-corporate-800 whitespace-nowrap">
+                Otros Cambios Relevantes
+            </button>
+            <button onclick="switchTab('plan')" id="btn-plan" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-corporate-100 text-corporate-800 whitespace-nowrap">
+                Plan de Acción del Despacho
+            </button>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full">
+
+        <!-- TAB: TODOS (Vista General) -->
+        <div id="tab-todos" class="tab-content active space-y-12">
+            
+            <!-- Quick Summary Banner -->
+            <div class="bg-gradient-to-r from-corporate-900 to-corporate-800 text-white rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold mb-3">Diagnóstico Ejecutivo 2027</h2>
+                    <p class="text-corporate-100 text-sm sm:text-base leading-relaxed max-w-3xl">
+                        El Paquete Económico 2027 introduce medidas de coerción recaudatoria agresivas para grandes contribuyentes (límites estrictos a deducciones y pérdidas), al tiempo que ofrece incentivos sumamente atractivos para empresas con ingresos menores a 50 millones de pesos a través de un RESICO corporativo flexible.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Grid Preview of Sections -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-6 card-shadow border border-coral/20 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-coral-50 text-coral flex items-center justify-center font-bold text-lg mb-4">⚠️</div>
+                        <h3 class="text-lg font-bold text-corporate-900">Riesgos y Alertas</h3>
+                        <p class="text-sm text-gray-600 mt-2">Tope de deducciones al 96.67%/99%, restricción de pérdidas al 50% y corte de intereses deducibles al 20%.</p>
+                    </div>
+                    <button onclick="switchTab('riesgos')" class="mt-6 text-sm font-semibold text-coral flex items-center gap-1 hover:underline">
+                        Ver detalles de riesgos →
+                    </button>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-6 card-shadow border border-emerald/20 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald flex items-center justify-center font-bold text-lg mb-4">💡</div>
+                        <h3 class="text-lg font-bold text-corporate-900">Oportunidades Clave</h3>
+                        <p class="text-sm text-gray-600 mt-2">RESICO PM opcional hasta 50 MDP con duplicación de depreciación, IVA simplificado al 7% y repatriación al 7.5%.</p>
+                    </div>
+                    <button onclick="switchTab('oportunidades')" class="mt-6 text-sm font-semibold text-emerald-600 flex items-center gap-1 hover:underline">
+                        Ver oportunidades de oro →
+                    </button>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-6 card-shadow border border-corporate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-corporate-50 text-corporate-800 flex items-center justify-center font-bold text-lg mb-4">📋</div>
+                        <h3 class="text-lg font-bold text-corporate-900">Estrategia de Despacho</h3>
+                        <p class="text-sm text-gray-600 mt-2">Simulaciones cliente por cliente, análisis de razones de negocio (Art. 5-A CFF) y servicios de cierre.</p>
+                    </div>
+                    <button onclick="switchTab('plan')" class="mt-6 text-sm font-semibold text-corporate-800 flex items-center gap-1 hover:underline">
+                        Ver plan de acción →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Data Highlights -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 card-shadow border border-corporate-100">
+                <h3 class="text-xl font-bold text-corporate-900 mb-6">Resumen Ejecutivo por Niveles de Impacto</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-coral-50/50 border border-coral/20 rounded-xl p-5">
+                        <span class="text-xs font-bold text-coral uppercase tracking-wide">Impacto Muy Alto</span>
+                        <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                            <li>• Nuevo límite de deducciones 96.67% / 99%.</li>
+                            <li>• Limitación de pérdidas fiscales al 50%.</li>
+                            <li>• Reducción de intereses deducibles (30% a 20%).</li>
+                        </ul>
+                    </div>
+                    <div class="bg-amber-50/50 border border-amber-200 rounded-xl p-5">
+                        <span class="text-xs font-bold text-amber-700 uppercase tracking-wide">Impacto Moderado / Alto</span>
+                        <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                            <li>• Ajustes en cálculo de CUFIN y CUCA.</li>
+                            <li>• Endurecimiento en pagos al extranjero.</li>
+                            <li>• Desaparición del ROGS (Grupos de Sociedades).</li>
+                        </ul>
+                    </div>
+                    <div class="bg-emerald-50/50 border border-emerald/20 rounded-xl p-5">
+                        <span class="text-xs font-bold text-emerald-700 uppercase tracking-wide">Oportunidades Principales</span>
+                        <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                            <li>• RESICO PM hasta 50 MDP (opcional).</li>
+                            <li>• Esquema IVA simplificado del 7%.</li>
+                            <li>• Repatriación de capitales al 7.5%.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TAB: RIESGOS DE ALTO IMPACTO -->
+        <div id="tab-riesgos" class="tab-content space-y-8">
+            <div class="border-b border-corporate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-coral">Alertas Críticas</span>
+                <h2 class="text-2xl font-bold text-corporate-900 mt-1">Riesgos y Cambios de Alto Impacto</h2>
+                <p class="text-sm text-gray-600 mt-1">Modificaciones fiscales diseñadas para cerrar brechas de elusión y elevar la recaudación efectiva.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Card 1: Deducciones -->
+                <div class="bg-white rounded-2xl p-6 card-shadow border-t-4 border-coral flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-coral-50 text-coral text-xs font-bold px-2.5 py-1 rounded-md">Regla 96.67% / 99%</span>
+                            <span class="text-xs text-gray-400 font-mono">ISR PM</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-corporate-900 mb-2">Límite General a Deducciones</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Si las deducciones son <strong>iguales o superiores al 96.67%</strong> de los ingresos acumulables, opera el límite. Si son inferiores, se establecen al 99%.
+                        </p>
+                        <div class="mt-4 bg-coral-50 p-3 rounded-xl text-xs text-coral font-medium">
+                            💡 Consecuencia: Podría generarse ISR efectivo incluso en empresas que hoy logran reducir su base fiscal a cero contablemente.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Pérdidas Fiscales -->
+                <div class="bg-white rounded-2xl p-6 card-shadow border-t-4 border-coral flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-coral-50 text-coral text-xs font-bold px-2.5 py-1 rounded-md">Tope del 50%</span>
+                            <span class="text-xs text-gray-400 font-mono">Amortización</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-corporate-900 mb-2">Limitación de Pérdidas Fiscales</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Las pérdidas fiscales de ejercicios anteriores solo podrán disminuirse hasta por el <strong>50% de la utilidad fiscal</strong> del ejercicio.
+                        </p>
+                        <div class="mt-4 bg-emerald-50 p-3 rounded-xl text-xs text-emerald-700 font-medium">
+                            ⚖️ Contraparte: El plazo para amortizarlas aumenta de 10 a 20 años, reduciendo el riesgo de caducidad para startups o etapas de inversión.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Intereses -->
+                <div class="bg-white rounded-2xl p-6 card-shadow border-t-4 border-coral flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-coral-50 text-coral text-xs font-bold px-2.5 py-1 rounded-md">Baja del 30% al 20%</span>
+                            <span class="text-xs text-gray-400 font-mono">Apalancamiento</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-corporate-900 mb-2">Reducción de Deducibilidad de Intereses</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            La deducción de intereses netos baja del 30% al <strong>20% de la utilidad fiscal ajustada</strong>. Los intereses no deducidos podrán aprovecharse en 10 ejercicios siguientes.
+                        </p>
+                        <div class="mt-4 bg-coral-50 p-3 rounded-xl text-xs text-coral font-medium">
+                            🏗️ Mayor impacto en: Grupos altamente apalancados, inmobiliarias, desarrolladoras y financieras con deuda.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- TAB: OPORTUNIDADES PURA -->
+        <div id="tab-oportunidades" class="tab-content space-y-8">
+            <div class="border-b border-corporate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Beneficios y Estímulos</span>
+                <h2 class="text-2xl font-bold text-corporate-900 mt-1">Oportunidades Clave para PyMEs y Despachos</h2>
+                <p class="text-sm text-gray-600 mt-1">Paquete orientado a dinamizar empresas menores a 50 millones de pesos y fomentar la inversión productiva.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Oportunidad 1: RESICO PM -->
+                <div class="bg-white rounded-2xl p-6 card-shadow border border-emerald/30">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald flex items-center justify-center font-bold text-lg">💎</div>
+                        <div>
+                            <span class="text-xs font-bold text-emerald-600 uppercase">La Joya del Paquete</span>
+                            <h3 class="text-lg font-bold text-corporate-900">RESICO PM Opcional hasta $50 MDP</h3>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald font-bold">✓</span>
+                            <span><strong>Tributación sobre flujo de efectivo:</strong> Pides ISR solo sobre lo cobrado, no sobre lo devengado. Las cuentas por cobrar dejan de generar impuesto antes de cobrarse.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald font-bold">✓</span>
+                            <span><strong>Deducción de inversiones duplicada:</strong> Mobiliario y equipo 50%, inmuebles 26%, preoperativos 20%. Recupera la mitad del equipo en un solo ejercicio.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald font-bold">✓</span>
+                            <span><strong>Opcionalidad real:</strong> Puedes entrar o quedarte en Título II según convenga, evitando la rigidez obligatoria anterior.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Oportunidad 2: IVA Simplificado -->
+                <div class="bg-white rounded-2xl p-6 card-shadow border border-emerald/30">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald flex items-center justify-center font-bold text-lg">📊</div>
+                        <div>
+                            <span class="text-xs font-bold text-emerald-600 uppercase">Negocios de Servicios</span>
+                            <h3 class="text-lg font-bold text-corporate-900">Esquema Opcional de IVA al 7%</h3>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald font-bold">✓</span>
+                            <span><strong>Tasa fija directa:</strong> Aplica 7% mensual al valor total de los actos gravados efectivamente cobrados.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald font-bold">✓</span>
+                            <span><strong>Sin derecho a acreditamiento:</strong> Ideal para despachos, consultorías u honorarios donde el costo principal es nómina sin IVA acreditable.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald font-bold">✓</span>
+                            <span><strong>Margen atractivo:</strong> Pasa de pagar 16% neto teórico a 7% sobre cobros, ganando hasta 9 puntos de margen.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Oportunidad 3: RESICO PF -->
+                <div class="bg-white rounded-2xl p-6 card-shadow border border-emerald/30">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald flex items-center justify-center font-bold text-lg">👤</div>
+                        <div>
+                            <span class="text-xs font-bold text-emerald-600 uppercase">Personas Físicas</span>
+                            <h3 class="text-lg font-bold text-corporate-900">RESICO PF ampliado a $5 MDP</h3>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-3">
+                        El límite sube de $3.5 millones a <strong>$5 millones anuales</strong>, con tasas preferenciales de 1% a 2.5%.
+                    </p>
+                    <div class="bg-amber-50 p-3 rounded-xl text-xs text-amber-800 font-medium">
+                        ⚠️ <strong>Restricción importante:</strong> Sigue excluido quien sea socio o accionista de una persona moral (art. 113-E), por lo que no aplica para socios que facturan servicios a sus empresas.
+                    </div>
+                </div>
+
+                <!-- Oportunidad 4: Otros Estímulos y Repatriación -->
+                <div class="bg-white rounded-2xl p-6 card-shadow border border-emerald/30">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald flex items-center justify-center font-bold text-lg">🌐</div>
+                        <div>
+                            <span class="text-xs font-bold text-emerald-600 uppercase">Inversión & Crecimiento</span>
+                            <h3 class="text-lg font-bold text-corporate-900">Repatriación, Plan México y Tasa 0%</h3>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• <strong>Repatriación de Capitales:</strong> Tasa de ISR al 7.5% condicionada a inversión productiva en México.</li>
+                        <li>• <strong>Plan México y Polos:</strong> Incorporación definitiva a LISR para dar certeza jurídica e incentivos de capacitación.</li>
+                        <li>• <strong>Sector Editorial:</strong> Libros y revistas pasan de exentos a <strong>tasa 0%</strong> (permite recuperar IVA acreditable).</li>
+                        <li>• <strong>OPIs:</strong> Tasa de 10% sobre ganancia en enajenación de acciones en Ofertas Públicas Iniciales.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- TAB: OTROS CAMBIOS RELEVANTES -->
+        <div id="tab-otros" class="tab-content space-y-8">
+            <div class="border-b border-corporate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-corporate-800">Modificaciones Operativas</span>
+                <h2 class="text-2xl font-bold text-corporate-900 mt-1">Otros Cambios Fiscales y Estructurales</h2>
+                <p class="text-sm text-gray-600 mt-1">Modificaciones en deducciones al extranjero, cuentas fiscales, regímenes grupales y derechos federales.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-white rounded-2xl p-6 card-shadow border border-corporate-100">
+                    <h3 class="text-base font-bold text-corporate-900 mb-2">Pagos al Extranjero</h3>
+                    <p class="text-sm text-gray-600">
+                        Se endurece el momento de deducción: se reconocen como deducibles hasta el ejercicio en que efectivamente se preste el servicio y se efectúe el pago, evitando deducciones anticipadas.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 card-shadow border border-corporate-100">
+                    <h3 class="text-base font-bold text-corporate-900 mb-2">Ajustes en CUFIN y CUCA</h3>
+                    <p class="text-sm text-gray-600">
+                        Para la CUFIN se restan los gastos no deducibles. Para la CUCA por capitalización de pasivos, no integran intereses devengados no pagados ni su IVA correspondiente.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 card-shadow border border-corporate-100">
+                    <h3 class="text-base font-bold text-corporate-900 mb-2">Desaparición del ROGS</h3>
+                    <p class="text-sm text-gray-600">
+                        Se elimina el Régimen Opcional para Grupos de Sociedades y se realiza el cobro íntegro del impuesto diferido, al cumplirse el objetivo transitorio de 2013.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 card-shadow border border-corporate-100">
+                    <h3 class="text-base font-bold text-corporate-900 mb-2">Estímulo de Autopistas</h3>
+                    <p class="text-sm text-gray-600">
+                        El crédito fiscal de hasta 50% en peajes se restringe exclusivamente a autotransporte de carga/pasaje/turismo con ingresos menores a $250 millones anuales.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 card-shadow border border-corporate-100">
+                    <h3 class="text-base font-bold text-corporate-900 mb-2">Incremento de Derechos</h3>
+                    <p class="text-sm text-gray-600">
+                        Modificaciones en migración, telecomunicaciones, infraestructura, trámites sanitarios, medio ambiente y un <strong>aumento de 16%</strong> en cuotas de inspección bursátil de la CNBV.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 card-shadow border border-corporate-100">
+                    <h3 class="text-base font-bold text-corporate-900 mb-2">Sector Primario e Intereses</h3>
+                    <p class="text-sm text-gray-600">
+                        Exención agrícola/ganadera sube a $1,000,000 anuales. La retención anual de ISR por intereses en LIF baja del 0.90% (2026) al 0.68% (2027).
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TAB: PLAN DE ACCIÓN DEL DESPACHO -->
+        <div id="tab-plan" class="tab-content space-y-8">
+            <div class="border-b border-corporate-100 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-corporate-800">Estrategia Profesional</span>
+                <h2 class="text-2xl font-bold text-corporate-900 mt-1">Plan de Acción para Irazaba y Asociados</h2>
+                <p class="text-sm text-gray-600 mt-1">Cómo convertir el paquete 2027 en oportunidades de consultoría y servicios de alto valor entre octubre y enero.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Simulaciones recomendadas -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 card-shadow border border-corporate-100 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-corporate-900 text-white flex items-center justify-center font-bold text-lg">⚙️</div>
+                        <h3 class="text-lg font-bold text-corporate-900">Simulaciones Vendibles Cliente por Cliente</h3>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <span class="text-corporate-900 font-bold">1.</span>
+                            <span><strong>Título II vs RESICO PM:</strong> Simular el impacto del flujo de efectivo y la depreciación duplicada para empresas bajo 50 MDP.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-corporate-900 font-bold">2.</span>
+                            <span><strong>IVA Simplificado 7% vs Real:</strong> Correr corridas financieras para negocios de servicios con alto costo de nómina y bajo IVA acreditable.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-corporate-900 font-bold">3.</span>
+                            <span><strong>Reingreso a RESICO:</strong> Revisar clientes expulsados por omisiones previas para evaluar su retorno al régimen.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-corporate-900 font-bold">4.</span>
+                            <span><strong>Cierre 2026 / Proveedores Extranjeros:</strong> Preparar listas preventivas para anticipos y pagos transfronterizos.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Advertencias y Razón de Negocios -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 card-shadow border border-coral/30 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-coral-50 text-coral flex items-center justify-center font-bold text-lg">🛡️</div>
+                        <h3 class="text-lg font-bold text-corporate-900">Advertencias Legales y de Cumplimiento</h3>
+                    </div>
+                    <div class="space-y-4 text-sm text-gray-700">
+                        <div class="bg-coral-50 p-4 rounded-xl border border-coral/20">
+                            <p class="font-bold text-coral mb-1">⚠️ Cuidado con la Razón de Negocios (Art. 5-A CFF)</p>
+                            <p class="text-xs text-gray-700 leading-relaxed">
+                                Fraccionar artificialmente una empresa existente para caer por debajo del umbral de los 50 MDP es exactamente lo que el SAT buscará atacar. La ventaja fiscal se aprovecha creciendo sanamente dentro del umbral, no fragmentando operaciones sin sustancia económica.
+                            </p>
+                        </div>
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            <strong>Nota metodológica:</strong> Todo lo analizado proviene de la iniciativa de reforma. Se recomienda preparar corridas financieras preventivas y formalizar la toma de decisiones definitivas hasta la publicación oficial del decreto.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-corporate-900 text-corporate-100 py-8 border-t border-corporate-800 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+            <p>Infografía Fiscal 2027 • Elaborado para análisis interno y consultoría especializada.</p>
+            <p class="text-emerald-400 font-medium">Irazaba y Asociados • Estrategia & Cumplimiento</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            // Ocultar todos los contenidos
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Remover clase activa de todos los botones
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-corporate-900', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-corporate-100', 'text-corporate-800');
+            });
+
+            // Mostrar el contenido seleccionado
+            const activeContent = document.getElementById('tab-' + tabId);
+            if (activeContent) {
+                activeContent.classList.add('active');
+            }
+
+            // Activar el botón correspondiente
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-corporate-100', 'text-corporate-800');
+                activeBtn.classList.add('bg-corporate-900', 'text-white', 'shadow-sm');
+            }
+
+            // Scroll suave al inicio del contenido
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
